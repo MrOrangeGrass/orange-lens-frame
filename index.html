@@ -33,7 +33,9 @@ body{
   overflow-x:hidden;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 nav{
   position:fixed;
@@ -65,7 +67,9 @@ nav a:hover{
   color:var(--o);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:92vh;
@@ -153,7 +157,7 @@ h1 span{
   background:linear-gradient(transparent,#000b);
 }
 
-.hero-card .hero-label{
+.hero-label{
   position:absolute;
   z-index:2;
   bottom:25px;
@@ -163,7 +167,9 @@ h1 span{
   font-weight:bold;
 }
 
-/* GENERAL SECTIONS */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 section{
   padding:95px 7%;
@@ -181,7 +187,9 @@ section{
   margin-bottom:40px;
 }
 
-/* FILTER BUTTONS */
+/* =========================
+   FILTERS
+========================= */
 
 .filters{
   display:flex;
@@ -208,7 +216,9 @@ section{
   color:white;
 }
 
-/* GALLERY */
+/* =========================
+   GALLERY
+========================= */
 
 .gallery{
   display:grid;
@@ -244,14 +254,13 @@ section{
   transform:scale(1.07);
 }
 
-/* F-16 FIX */
-
+/* F-16 orientation */
 .photo.f16 img{
   transform:rotate(180deg) scale(1.02);
 }
 
 .photo.f16:hover img{
-  transform:rotate(180deg) scale(1.09);
+  transform:rotate(180deg) scale(1.08);
 }
 
 .photo:after{
@@ -270,6 +279,7 @@ section{
   right:20px;
   color:#fff;
   text-shadow:0 2px 8px #000;
+  pointer-events:none;
 }
 
 .caption strong{
@@ -281,42 +291,49 @@ section{
   font-size:.9rem;
 }
 
-/* LIGHTBOX */
+/* =========================
+   FULL SCREEN VIEWER
+========================= */
 
 .lightbox{
   position:fixed;
   inset:0;
-  z-index:100;
-  background:#000e;
+  z-index:9999;
+  background:rgba(0,0,0,.94);
   display:none;
   align-items:center;
   justify-content:center;
-  padding:30px;
+  padding:70px 80px;
 }
 
-.lightbox.show{
+.lightbox.open{
   display:flex;
 }
 
-.lightbox img{
+.lightbox-image{
   max-width:90vw;
-  max-height:85vh;
+  max-height:82vh;
+  width:auto;
+  height:auto;
   object-fit:contain;
-  border-radius:12px;
-  box-shadow:0 20px 80px #000;
+  border-radius:10px;
+  box-shadow:0 20px 80px rgba(0,0,0,.8);
+  user-select:none;
 }
 
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next{
   position:absolute;
-  border:0;
-  background:#ffffff22;
+  z-index:10001;
+  border:none;
+  background:rgba(255,255,255,.15);
   color:white;
-  width:50px;
-  height:50px;
+  width:52px;
+  height:52px;
   border-radius:50%;
-  font-size:28px;
+  font-size:32px;
+  line-height:1;
   cursor:pointer;
   transition:.2s;
 }
@@ -324,11 +341,12 @@ section{
 .lightbox-close:hover,
 .lightbox-prev:hover,
 .lightbox-next:hover{
-  background:#ffffff44;
+  background:rgba(255,255,255,.3);
+  transform:scale(1.08);
 }
 
 .lightbox-close{
-  top:25px;
+  top:20px;
   right:25px;
 }
 
@@ -346,15 +364,19 @@ section{
 
 .lightbox-caption{
   position:absolute;
-  bottom:25px;
-  left:0;
-  right:0;
+  left:20px;
+  right:20px;
+  bottom:22px;
   text-align:center;
   color:white;
+  font-size:18px;
   font-weight:bold;
+  text-shadow:0 2px 8px black;
 }
 
-/* ABOUT */
+/* =========================
+   ABOUT
+========================= */
 
 .dark{
   background:var(--d);
@@ -390,7 +412,9 @@ section{
   background:#ffffff1c;
 }
 
-/* SERVICES */
+/* =========================
+   SERVICES
+========================= */
 
 .services{
   background:#fff;
@@ -429,7 +453,9 @@ section{
   line-height:1.6;
 }
 
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
   background:linear-gradient(120deg,#ffe1c6,#d6f1eb);
@@ -448,12 +474,9 @@ section{
   font-weight:bold;
 }
 
-.social{
-  display:inline-block;
-  margin-top:8px;
-}
-
-/* BOOKING FORM */
+/* =========================
+   BOOKING FORM
+========================= */
 
 .booking-form{
   display:grid;
@@ -485,12 +508,34 @@ section{
 }
 
 .booking-form button{
-  border:0;
+  border:none;
   cursor:pointer;
   font:inherit;
 }
 
-/* FOOTER */
+.form-status{
+  display:none;
+  padding:15px;
+  border-radius:12px;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+.form-status.success{
+  display:block;
+  background:#d9f3e8;
+  color:#17634c;
+}
+
+.form-status.error{
+  display:block;
+  background:#ffe0dc;
+  color:#9b2c20;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   padding:30px 7%;
@@ -501,7 +546,9 @@ footer{
   gap:10px;
 }
 
-/* ANIMATIONS */
+/* =========================
+   ANIMATIONS
+========================= */
 
 .reveal{
   opacity:0;
@@ -514,7 +561,9 @@ footer{
   transform:translateY(0);
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
@@ -534,6 +583,7 @@ footer{
   .hero-card{
     height:420px;
   }
+
 }
 
 @media(max-width:600px){
@@ -570,17 +620,33 @@ footer{
     padding:28px 22px;
   }
 
+  .lightbox{
+    padding:60px 15px;
+  }
+
+  .lightbox-image{
+    max-width:96vw;
+    max-height:78vh;
+  }
+
   .lightbox-prev{
-    left:10px;
+    left:8px;
   }
 
   .lightbox-next{
+    right:8px;
+  }
+
+  .lightbox-close{
+    top:10px;
     right:10px;
   }
 
-  .lightbox img{
-    max-width:95vw;
+  .lightbox-caption{
+    bottom:12px;
+    font-size:14px;
   }
+
 }
 </style>
 
@@ -588,10 +654,15 @@ footer{
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
-  <div class="logo"><span>Orange</span> Lens Frame</div>
+
+  <div class="logo">
+    <span>Orange</span> Lens Frame
+  </div>
 
   <div class="links">
     <a href="#work">Work</a>
@@ -599,16 +670,21 @@ footer{
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </div>
+
 </nav>
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
   <div class="reveal">
 
 ```
-<div class="badge">Photography • New Mexico</div>
+<div class="badge">
+  Photography • New Mexico
+</div>
 
 <h1>
   Moments.<br>
@@ -620,9 +696,13 @@ footer{
   nature, sports, aviation, wildlife, and memorable moments.
 </p>
 
-<a class="btn primary" href="#work">View My Work</a>
+<a class="btn primary" href="#work">
+  View My Work
+</a>
 
-<a class="btn secondary" href="#contact">Book a Session</a>
+<a class="btn secondary" href="#contact">
+  Book a Session
+</a>
 ```
 
   </div>
@@ -630,7 +710,9 @@ footer{
   <div class="hero-card reveal">
 
 ```
-<img src="images/F-16.jpg" alt="F-16 Falcon at Holloman Airshow 2026">
+<img
+  src="images/F-16.jpg"
+  alt="F-16 Falcon at Holloman Airshow 2026">
 
 <div class="hero-label">
   Orange Lens Frame
@@ -641,15 +723,19 @@ footer{
 
 </header>
 
-<!-- GALLERY -->
+<!-- =========================
+     GALLERY
+========================= -->
 
 <section id="work">
 
-  <h2 class="title reveal">Selected Work</h2>
+  <h2 class="title reveal">
+    Selected Work
+  </h2>
 
   <p class="intro reveal">
-    A collection of sports, wildlife, aviation, portraits,
-    and outdoor photography.
+    A collection of sports, wildlife, aviation,
+    portraits, and outdoor photography.
   </p>
 
   <div class="filters reveal">
@@ -681,91 +767,163 @@ footer{
   <div class="gallery">
 
 ```
-<article class="photo reveal" data-category="sports"
+<!-- BASKETBALL -->
+
+<article
+  class="photo reveal"
+  data-category="sports"
   data-title="Basketball"
   data-location="AHS · Alamogordo, New Mexico">
 
-  <img src="images/Basketball.JPG"
-       alt="Basketball at AHS in Alamogordo">
+  <img
+    src="images/Basketball.JPG"
+    alt="Basketball at AHS in Alamogordo">
 
   <div class="caption">
-    <strong>Basketball</strong>
-    <small>AHS · Alamogordo, New Mexico</small>
+
+    <strong>
+      Basketball
+    </strong>
+
+    <small>
+      AHS · Alamogordo, New Mexico
+    </small>
+
   </div>
 
 </article>
 
 
-<article class="photo reveal" data-category="wildlife"
+<!-- BIRD -->
+
+<article
+  class="photo reveal"
+  data-category="wildlife"
   data-title="Wildlife"
   data-location="Pagosa Springs, Colorado">
 
-  <img src="images/Bird.jpg"
-       alt="Bird in Pagosa Springs">
+  <img
+    src="images/Bird.jpg"
+    alt="Bird in Pagosa Springs">
 
   <div class="caption">
-    <strong>Wildlife</strong>
-    <small>Pagosa Springs, Colorado</small>
+
+    <strong>
+      Wildlife
+    </strong>
+
+    <small>
+      Pagosa Springs, Colorado
+    </small>
+
   </div>
 
 </article>
 
 
-<article class="photo f16 reveal" data-category="aviation"
+<!-- F-16 -->
+
+<article
+  class="photo f16 reveal"
+  data-category="aviation"
   data-title="F-16 Falcon"
   data-location="Holloman Airshow 2026">
 
-  <img src="images/F-16.jpg"
-       alt="F-16 at Holloman Airshow 2026">
+  <img
+    src="images/F-16.jpg"
+    alt="F-16 at Holloman Airshow 2026">
 
   <div class="caption">
-    <strong>F-16 Falcon</strong>
-    <small>Holloman Airshow 2026</small>
+
+    <strong>
+      F-16 Falcon
+    </strong>
+
+    <small>
+      Holloman Airshow 2026
+    </small>
+
   </div>
 
 </article>
 
 
-<article class="photo reveal" data-category="portraits"
+<!-- GROUP -->
+
+<article
+  class="photo reveal"
+  data-category="portraits"
   data-title="Group Portrait"
   data-location="Oliver Lee Memorial State Park">
 
-  <img src="images/Group.JPG"
-       alt="Group portrait at Oliver Lee Memorial State Park">
+  <img
+    src="images/Group.JPG"
+    alt="Group portrait at Oliver Lee Memorial State Park">
 
   <div class="caption">
-    <strong>Group Portrait</strong>
-    <small>Oliver Lee Memorial State Park</small>
+
+    <strong>
+      Group Portrait
+    </strong>
+
+    <small>
+      Oliver Lee Memorial State Park
+    </small>
+
   </div>
 
 </article>
 
 
-<article class="photo reveal" data-category="portraits"
+<!-- PERSON 1 -->
+
+<article
+  class="photo reveal"
+  data-category="portraits"
   data-title="Portrait"
   data-location="Oliver Lee Memorial State Park">
 
-  <img src="images/Person%201.JPG"
-       alt="Portrait at Oliver Lee Memorial State Park">
+  <img
+    src="images/Person%201.JPG"
+    alt="Portrait at Oliver Lee Memorial State Park">
 
   <div class="caption">
-    <strong>Portrait</strong>
-    <small>Oliver Lee Memorial State Park</small>
+
+    <strong>
+      Portrait
+    </strong>
+
+    <small>
+      Oliver Lee Memorial State Park
+    </small>
+
   </div>
 
 </article>
 
 
-<article class="photo reveal" data-category="portraits"
+<!-- PERSON 2 -->
+
+<article
+  class="photo reveal"
+  data-category="portraits"
   data-title="Portrait"
   data-location="Oliver Lee Memorial State Park">
 
-  <img src="images/Person%202.JPG"
-       alt="Portrait at Oliver Lee Memorial State Park">
+  <img
+    src="images/Person%202.JPG"
+    alt="Portrait at Oliver Lee Memorial State Park">
 
   <div class="caption">
-    <strong>Portrait</strong>
-    <small>Oliver Lee Memorial State Park</small>
+
+    <strong>
+      Portrait
+    </strong>
+
+    <small>
+      Oliver Lee Memorial State Park
+    </small>
+
   </div>
 
 </article>
@@ -775,7 +933,9 @@ footer{
 
 </section>
 
-<!-- SERVICES -->
+<!-- =========================
+     SERVICES
+========================= -->
 
 <section class="services" id="services">
 
@@ -785,8 +945,8 @@ footer{
 
   <p class="intro reveal">
     Whether you're looking for portraits, action shots,
-    or something completely different, let's create
-    something worth remembering.
+    aviation photography, or something completely different,
+    let's create something worth remembering.
   </p>
 
   <div class="service-grid">
@@ -794,9 +954,13 @@ footer{
 ```
 <div class="service reveal">
 
-  <div class="service-icon">📸</div>
+  <div class="service-icon">
+    📸
+  </div>
 
-  <h3>Portraits</h3>
+  <h3>
+    Portraits
+  </h3>
 
   <p>
     Individual and group portraits designed to capture
@@ -808,9 +972,13 @@ footer{
 
 <div class="service reveal">
 
-  <div class="service-icon">🏀</div>
+  <div class="service-icon">
+    🏀
+  </div>
 
-  <h3>Sports</h3>
+  <h3>
+    Sports
+  </h3>
 
   <p>
     Action photography for sports, teams,
@@ -822,9 +990,13 @@ footer{
 
 <div class="service reveal">
 
-  <div class="service-icon">✈️</div>
+  <div class="service-icon">
+    ✈️
+  </div>
 
-  <h3>Aviation</h3>
+  <h3>
+    Aviation
+  </h3>
 
   <p>
     Aviation and airshow photography focused
@@ -836,9 +1008,13 @@ footer{
 
 <div class="service reveal">
 
-  <div class="service-icon">🌄</div>
+  <div class="service-icon">
+    🌄
+  </div>
 
-  <h3>Nature & Wildlife</h3>
+  <h3>
+    Nature & Wildlife
+  </h3>
 
   <p>
     Outdoor photography featuring landscapes,
@@ -852,7 +1028,9 @@ footer{
 
 </section>
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section class="dark" id="about">
 
@@ -900,7 +1078,9 @@ footer{
 
 </section>
 
-<!-- CONTACT / BOOKING -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section class="contact" id="contact">
 
@@ -919,6 +1099,7 @@ footer{
 
 <p>
   <b>Email:</b>
+
   <a href="mailto:jodycerra@outlook.com">
     jodycerra@outlook.com
   </a>
@@ -927,6 +1108,7 @@ footer{
 
 <p>
   <b>Phone:</b>
+
   <a href="tel:+15755518646">
     (575) 551-8646
   </a>
@@ -935,8 +1117,8 @@ footer{
 
 <p>
   <b>Instagram:</b>
+
   <a
-    class="social"
     href="https://www.instagram.com/orange_lens_frame"
     target="_blank"
     rel="noopener">
@@ -945,58 +1127,93 @@ footer{
 </p>
 
 
-<h3>Request a Session</h3>
+<h3>
+  Request a Session
+</h3>
 
+
+<!-- FORMSPREE FORM -->
 
 <form
+  id="bookingForm"
   class="booking-form"
-  action="mailto:jodycerra@outlook.com"
-  method="post"
-  enctype="text/plain">
+  action="https://formspree.io/f/mykrqowj"
+  method="POST">
+
 
   <input
     type="text"
-    name="Name"
+    name="name"
     placeholder="Your name"
     required>
 
+
   <input
     type="email"
-    name="Email"
+    name="email"
     placeholder="Your email"
     required>
 
-  <select name="Photography Type" required>
+
+  <select
+    name="photography_type"
+    required>
 
     <option value="">
       What type of photography?
     </option>
 
-    <option>Portraits</option>
-    <option>Sports</option>
-    <option>Aviation</option>
-    <option>Wildlife</option>
-    <option>Event Photography</option>
-    <option>Other</option>
+    <option value="Portraits">
+      Portraits
+    </option>
+
+    <option value="Sports">
+      Sports
+    </option>
+
+    <option value="Aviation">
+      Aviation
+    </option>
+
+    <option value="Wildlife">
+      Wildlife
+    </option>
+
+    <option value="Event Photography">
+      Event Photography
+    </option>
+
+    <option value="Other">
+      Other
+    </option>
 
   </select>
 
 
   <input
     type="date"
-    name="Preferred Date">
+    name="preferred_date">
 
 
   <textarea
-    name="Message"
-    placeholder="Tell me about what you're looking for..."></textarea>
+    name="message"
+    placeholder="Tell me about what you're looking for..."
+    required></textarea>
 
 
   <button
     class="btn primary"
     type="submit">
+
     Send Booking Request
+
   </button>
+
+
+  <div
+    id="formStatus"
+    class="form-status">
+  </div>
 
 </form>
 
@@ -1006,7 +1223,9 @@ footer{
   href="https://www.instagram.com/orange_lens_frame"
   target="_blank"
   rel="noopener">
+
   📷 Follow Me on Instagram
+
 </a>
 ```
 
@@ -1014,7 +1233,9 @@ footer{
 
 </section>
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1028,59 +1249,97 @@ footer{
 
 </footer>
 
-<!-- FULL SCREEN PHOTO VIEWER -->
+<!-- =========================
+     FULL SCREEN VIEWER
+========================= -->
 
-<div class="lightbox" id="lightbox">
+<div
+  class="lightbox"
+  id="lightbox"
+  aria-hidden="true">
 
-  <button class="lightbox-close" aria-label="Close">
-    ×
+<button
+ class="lightbox-close"
+ id="lightboxClose"
+ aria-label="Close photo viewer">
+
+```
+×
+```
+
   </button>
 
-  <button class="lightbox-prev" aria-label="Previous">
-    ‹
+<button
+ class="lightbox-prev"
+ id="lightboxPrev"
+ aria-label="Previous photo">
+
+```
+‹
+```
+
   </button>
 
-  <img id="lightbox-img" src="" alt="">
+<img
+ class="lightbox-image"
+ id="lightboxImage"
+ src=""
+ alt="">
 
-  <button class="lightbox-next" aria-label="Next">
-    ›
+<button
+ class="lightbox-next"
+ id="lightboxNext"
+ aria-label="Next photo">
+
+```
+›
+```
+
   </button>
 
-  <div class="lightbox-caption" id="lightbox-caption"></div>
+  <div
+    class="lightbox-caption"
+    id="lightboxCaption">
+  </div>
 
 </div>
 
 <script>
 
-/* ------------------------------
-   PHOTO FILTERS
------------------------------- */
+/* =========================
+   GALLERY FILTER
+========================= */
 
 const filterButtons =
   document.querySelectorAll(".filter-btn");
 
-const photos =
-  document.querySelectorAll(".photo");
+const photoCards =
+  Array.from(document.querySelectorAll(".photo"));
 
 
 filterButtons.forEach(button => {
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", function(){
 
-    filterButtons.forEach(btn =>
-      btn.classList.remove("active")
-    );
+    filterButtons.forEach(btn => {
+      btn.classList.remove("active");
+    });
 
-    button.classList.add("active");
+    this.classList.add("active");
 
     const filter =
-      button.dataset.filter;
+      this.getAttribute("data-filter");
 
-    photos.forEach(photo => {
+
+    photoCards.forEach(photo => {
+
+      const category =
+        photo.getAttribute("data-category");
+
 
       if(
         filter === "all" ||
-        photo.dataset.category === filter
+        category === filter
       ){
 
         photo.style.display = "";
@@ -1098,82 +1357,98 @@ filterButtons.forEach(button => {
 });
 
 
-/* ------------------------------
-   LIGHTBOX
------------------------------- */
+/* =========================
+   FULL SCREEN PHOTO VIEWER
+========================= */
 
 const lightbox =
   document.getElementById("lightbox");
 
-const lightboxImg =
-  document.getElementById("lightbox-img");
+const lightboxImage =
+  document.getElementById("lightboxImage");
 
 const lightboxCaption =
-  document.getElementById("lightbox-caption");
+  document.getElementById("lightboxCaption");
 
 const closeButton =
-  document.querySelector(".lightbox-close");
+  document.getElementById("lightboxClose");
 
-const prevButton =
-  document.querySelector(".lightbox-prev");
+const previousButton =
+  document.getElementById("lightboxPrev");
 
 const nextButton =
-  document.querySelector(".lightbox-next");
+  document.getElementById("lightboxNext");
 
 
-let currentPhoto = 0;
+let currentIndex = 0;
 
 
-function visiblePhotos(){
+/*
+   Get only photos that are currently visible.
+*/
 
-  return [...photos].filter(photo =>
-    photo.style.display !== "none"
-  );
+function getVisiblePhotos(){
 
-}
+  return photoCards.filter(photo => {
 
+    return window.getComputedStyle(photo).display !== "none";
 
-function openPhoto(photo){
-
-  const visible =
-    visiblePhotos();
-
-  currentPhoto =
-    visible.indexOf(photo);
-
-  showPhoto();
-
-  lightbox.classList.add("show");
-
-  document.body.style.overflow = "hidden";
+  });
 
 }
 
 
-function showPhoto(){
+/*
+   Display a particular photo.
+*/
 
-  const visible =
-    visiblePhotos();
+function showPhoto(index){
 
-  if(!visible.length) return;
+  const visiblePhotos =
+    getVisiblePhotos();
 
-  if(currentPhoto < 0)
-    currentPhoto = visible.length - 1;
+  if(visiblePhotos.length === 0){
+    return;
+  }
 
-  if(currentPhoto >= visible.length)
-    currentPhoto = 0;
+
+  if(index < 0){
+
+    index =
+      visiblePhotos.length - 1;
+
+  }
+
+
+  if(index >= visiblePhotos.length){
+
+    index = 0;
+
+  }
+
+
+  currentIndex = index;
+
 
   const photo =
-    visible[currentPhoto];
+    visiblePhotos[currentIndex];
 
-  const img =
+  const image =
     photo.querySelector("img");
 
-  lightboxImg.src =
-    img.src;
 
-  lightboxImg.alt =
-    img.alt;
+  /*
+     Use the original image source.
+     This means the full-screen viewer
+     displays the complete photograph.
+  */
+
+  lightboxImage.src =
+    image.getAttribute("src");
+
+  lightboxImage.alt =
+    image.getAttribute("alt") || "";
+
 
   lightboxCaption.textContent =
     photo.dataset.title +
@@ -1183,99 +1458,349 @@ function showPhoto(){
 }
 
 
-function closeLightbox(){
+/*
+   Open viewer.
+*/
 
-  lightbox.classList.remove("show");
+function openLightbox(photo){
 
-  document.body.style.overflow = "";
+  const visiblePhotos =
+    getVisiblePhotos();
+
+  currentIndex =
+    visiblePhotos.indexOf(photo);
+
+  showPhoto(currentIndex);
+
+  lightbox.classList.add("open");
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow =
+    "hidden";
 
 }
 
 
-photos.forEach(photo => {
+/*
+   Close viewer.
+*/
 
-  photo.addEventListener("click", () => {
+function closeLightbox(){
 
-    openPhoto(photo);
+  lightbox.classList.remove("open");
+
+  lightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow =
+    "";
+
+  /*
+     Clear image after closing.
+  */
+
+  setTimeout(() => {
+
+    if(!lightbox.classList.contains("open")){
+
+      lightboxImage.src = "";
+
+    }
+
+  },200);
+
+}
+
+
+/*
+   Click any gallery photo.
+*/
+
+photoCards.forEach(photo => {
+
+  photo.addEventListener("click", function(){
+
+    openLightbox(this);
 
   });
 
 });
 
 
-closeButton.addEventListener(
+/*
+   Previous photo.
+*/
+
+previousButton.addEventListener(
   "click",
-  closeLightbox
+  function(event){
+
+    event.stopPropagation();
+
+    showPhoto(currentIndex - 1);
+
+  }
 );
 
 
-prevButton.addEventListener("click", () => {
+/*
+   Next photo.
+*/
 
-  currentPhoto--;
+nextButton.addEventListener(
+  "click",
+  function(event){
 
-  showPhoto();
+    event.stopPropagation();
 
-});
+    showPhoto(currentIndex + 1);
 
-
-nextButton.addEventListener("click", () => {
-
-  currentPhoto++;
-
-  showPhoto();
-
-});
+  }
+);
 
 
-lightbox.addEventListener("click", event => {
+/*
+   Close button.
+*/
 
-  if(event.target === lightbox){
+closeButton.addEventListener(
+  "click",
+  function(event){
+
+    event.stopPropagation();
 
     closeLightbox();
 
   }
+);
 
-});
 
+/*
+   Clicking the dark background closes it.
+*/
 
-document.addEventListener("keydown", event => {
+lightbox.addEventListener(
+  "click",
+  function(event){
 
-  if(!lightbox.classList.contains("show"))
-    return;
+    if(event.target === lightbox){
 
-  if(event.key === "Escape")
-    closeLightbox();
+      closeLightbox();
 
-  if(event.key === "ArrowLeft"){
-
-    currentPhoto--;
-    showPhoto();
-
-  }
-
-  if(event.key === "ArrowRight"){
-
-    currentPhoto++;
-    showPhoto();
+    }
 
   }
+);
 
-});
+
+/*
+   Keyboard controls.
+*/
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(!lightbox.classList.contains("open")){
+
+      return;
+
+    }
 
 
-/* ------------------------------
+    if(event.key === "Escape"){
+
+      closeLightbox();
+
+    }
+
+
+    if(event.key === "ArrowLeft"){
+
+      showPhoto(currentIndex - 1);
+
+    }
+
+
+    if(event.key === "ArrowRight"){
+
+      showPhoto(currentIndex + 1);
+
+    }
+
+  }
+);
+
+
+/* =========================
+   TOUCH / SWIPE SUPPORT
+========================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+lightbox.addEventListener(
+  "touchstart",
+  function(event){
+
+    touchStartX =
+      event.changedTouches[0].screenX;
+
+  },
+  {passive:true}
+);
+
+
+lightbox.addEventListener(
+  "touchend",
+  function(event){
+
+    touchEndX =
+      event.changedTouches[0].screenX;
+
+    const difference =
+      touchStartX - touchEndX;
+
+
+    if(Math.abs(difference) < 50){
+
+      return;
+
+    }
+
+
+    if(difference > 0){
+
+      showPhoto(currentIndex + 1);
+
+    }else{
+
+      showPhoto(currentIndex - 1);
+
+    }
+
+  },
+  {passive:true}
+);
+
+
+/* =========================
+   FORMSPREE BOOKING FORM
+========================= */
+
+const bookingForm =
+  document.getElementById("bookingForm");
+
+const formStatus =
+  document.getElementById("formStatus");
+
+
+bookingForm.addEventListener(
+  "submit",
+  async function(event){
+
+    event.preventDefault();
+
+
+    const submitButton =
+      bookingForm.querySelector(
+        "button[type='submit']"
+      );
+
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+      "Sending...";
+
+
+    formStatus.className =
+      "form-status";
+
+    formStatus.textContent =
+      "";
+
+
+    const formData =
+      new FormData(bookingForm);
+
+
+    try{
+
+      const response =
+        await fetch(
+          bookingForm.action,
+          {
+            method:"POST",
+            body:formData,
+            headers:{
+              "Accept":"application/json"
+            }
+          }
+        );
+
+
+      if(response.ok){
+
+        bookingForm.reset();
+
+        formStatus.className =
+          "form-status success";
+
+        formStatus.textContent =
+          "Thanks! Your booking request has been sent. I'll get back to you soon.";
+
+      }else{
+
+        throw new Error(
+          "Form submission failed."
+        );
+
+      }
+
+
+    }catch(error){
+
+      formStatus.className =
+        "form-status error";
+
+      formStatus.textContent =
+        "Something went wrong. Please try again or email me directly at jodycerra@outlook.com.";
+
+    }
+
+
+    submitButton.disabled = false;
+
+    submitButton.textContent =
+      "Send Booking Request";
+
+  }
+);
+
+
+/* =========================
    SCROLL ANIMATIONS
------------------------------- */
+========================= */
 
 const observer =
   new IntersectionObserver(
-    entries => {
+    function(entries){
 
       entries.forEach(entry => {
 
         if(entry.isIntersecting){
 
-          entry.target.classList.add("visible");
+          entry.target.classList.add(
+            "visible"
+          );
 
         }
 
