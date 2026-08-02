@@ -1,45 +1,1302 @@
 <!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Orange Lens Frame | Photography</title>
+
 <style>
-:root{--o:#ff6b35;--g:#2a9d8f;--d:#102a2a;--c:#fffaf3;--m:#60706f}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:var(--c);color:var(--d)}
-nav{position:fixed;top:0;left:0;right:0;z-index:5;padding:18px 7%;background:#fffaf3e8;backdrop-filter:blur(10px);display:flex;justify-content:space-between;font-weight:800}
-nav a{color:var(--d);text-decoration:none;margin-left:22px}.logo span{color:var(--o)}
-.hero{min-height:90vh;padding:140px 7% 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center;background:radial-gradient(circle at 85% 20%,#ffd9b8 0 12%,transparent 13%),radial-gradient(circle at 10% 85%,#bfe7df 0 14%,transparent 15%)}
-.badge{display:inline-block;background:var(--g);color:white;padding:8px 14px;border-radius:99px;font-weight:bold}
-h1{font-size:clamp(3.5rem,8vw,7rem);line-height:.9;margin:18px 0;letter-spacing:-.06em}h1 span{color:var(--o)}
-.hero p{font-size:1.2rem;color:var(--m);max-width:620px}.btn{display:inline-block;padding:14px 22px;border-radius:99px;text-decoration:none;font-weight:bold;margin:10px 8px 0 0}.primary{background:var(--o);color:#fff}.secondary{border:2px solid var(--d);color:var(--d)}
-.hero-card{height:500px;border-radius:35px;background:linear-gradient(145deg,var(--o),var(--g));display:grid;place-items:center;color:white;font-size:70px;position:relative;box-shadow:0 25px 70px #102a2a33}.hero-card div:last-child{position:absolute;bottom:25px;left:25px;font-size:22px;font-weight:bold}
-section{padding:95px 7%}.title{font-size:clamp(2.3rem,5vw,4rem);line-height:1;margin-bottom:12px}.intro{color:var(--m);max-width:700px;margin-bottom:40px}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.photo{aspect-ratio:4/5;position:relative;overflow:hidden;border-radius:22px;background:#ddd;box-shadow:0 12px 35px #102a2a1c}.photo img{width:100%;height:100%;object-fit:cover;transition:.45s}.photo:hover img{transform:scale(1.05)}.photo:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#000b)}
-.caption{position:absolute;z-index:2;bottom:18px;left:20px;right:20px;color:#fff;text-shadow:0 2px 8px #000}.caption strong{display:block;font-size:1.2rem}.caption small{font-size:.9rem}
-.dark{background:var(--d);color:white}.dark p{color:#d5e0df;font-size:1.1rem}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:60px}.features{display:grid;gap:14px}.feature{padding:17px;background:#ffffff12;border-left:5px solid var(--o);border-radius:14px}
-.contact{background:linear-gradient(120deg,#ffe1c6,#d6f1eb)}.card{background:white;border-radius:30px;padding:42px;max-width:850px;box-shadow:0 20px 60px #102a2a1f}.card a{color:var(--d);font-weight:bold}
-footer{padding:30px 7%;color:var(--m);display:flex;justify-content:space-between;flex-wrap:wrap}
-@media(max-width:800px){.hero,.grid2{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.links{display:none}.hero-card{height:350px}}
-@media(max-width:520px){.gallery{grid-template-columns:1fr}section{padding:70px 5%}.hero{padding:130px 5% 60px}}
+:root{
+  --o:#ff6b35;
+  --g:#2a9d8f;
+  --d:#102a2a;
+  --c:#fffaf3;
+  --m:#60706f;
+  --white:#ffffff;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--c);
+  color:var(--d);
+  overflow-x:hidden;
+}
+
+/* NAVIGATION */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:50;
+  padding:18px 7%;
+  background:#fffaf3e8;
+  backdrop-filter:blur(12px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:800;
+}
+
+nav a{
+  color:var(--d);
+  text-decoration:none;
+  margin-left:22px;
+  transition:.25s;
+}
+
+nav a:hover{
+  color:var(--o);
+}
+
+.logo span{
+  color:var(--o);
+}
+
+/* HERO */
+
+.hero{
+  min-height:92vh;
+  padding:140px 7% 70px;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:45px;
+  align-items:center;
+
+  background:
+    radial-gradient(circle at 85% 20%,#ffd9b8 0 12%,transparent 13%),
+    radial-gradient(circle at 10% 85%,#bfe7df 0 14%,transparent 15%);
+}
+
+.badge{
+  display:inline-block;
+  background:var(--g);
+  color:white;
+  padding:8px 14px;
+  border-radius:99px;
+  font-weight:bold;
+}
+
+h1{
+  font-size:clamp(3.5rem,8vw,7rem);
+  line-height:.9;
+  margin:18px 0;
+  letter-spacing:-.06em;
+}
+
+h1 span{
+  color:var(--o);
+}
+
+.hero p{
+  font-size:1.2rem;
+  color:var(--m);
+  max-width:620px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:99px;
+  text-decoration:none;
+  font-weight:bold;
+  margin:10px 8px 0 0;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.primary{
+  background:var(--o);
+  color:#fff;
+}
+
+.secondary{
+  border:2px solid var(--d);
+  color:var(--d);
+}
+
+.hero-card{
+  height:500px;
+  border-radius:35px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 25px 70px #102a2a33;
+  background:#ddd;
+}
+
+.hero-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.hero-card:after{
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  background:linear-gradient(transparent,#000b);
+}
+
+.hero-card .hero-label{
+  position:absolute;
+  z-index:2;
+  bottom:25px;
+  left:25px;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* GENERAL SECTIONS */
+
+section{
+  padding:95px 7%;
+}
+
+.title{
+  font-size:clamp(2.3rem,5vw,4rem);
+  line-height:1;
+  margin-bottom:12px;
+}
+
+.intro{
+  color:var(--m);
+  max-width:700px;
+  margin-bottom:40px;
+}
+
+/* FILTER BUTTONS */
+
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:30px;
+}
+
+.filter-btn{
+  border:2px solid var(--d);
+  background:transparent;
+  color:var(--d);
+  padding:10px 18px;
+  border-radius:99px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+  background:var(--o);
+  border-color:var(--o);
+  color:white;
+}
+
+/* GALLERY */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.photo{
+  aspect-ratio:4/5;
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  background:#ddd;
+  box-shadow:0 12px 35px #102a2a1c;
+  cursor:pointer;
+  transition:.35s;
+}
+
+.photo:hover{
+  transform:translateY(-7px);
+  box-shadow:0 20px 45px #102a2a35;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.5s;
+}
+
+.photo:hover img{
+  transform:scale(1.07);
+}
+
+/* F-16 FIX */
+
+.photo.f16 img{
+  transform:rotate(180deg) scale(1.02);
+}
+
+.photo.f16:hover img{
+  transform:rotate(180deg) scale(1.09);
+}
+
+.photo:after{
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  background:linear-gradient(transparent,#000b);
+  pointer-events:none;
+}
+
+.caption{
+  position:absolute;
+  z-index:2;
+  bottom:18px;
+  left:20px;
+  right:20px;
+  color:#fff;
+  text-shadow:0 2px 8px #000;
+}
+
+.caption strong{
+  display:block;
+  font-size:1.2rem;
+}
+
+.caption small{
+  font-size:.9rem;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:#000e;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+}
+
+.lightbox.show{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:90vw;
+  max-height:85vh;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 20px 80px #000;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next{
+  position:absolute;
+  border:0;
+  background:#ffffff22;
+  color:white;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  font-size:28px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover{
+  background:#ffffff44;
+}
+
+.lightbox-close{
+  top:25px;
+  right:25px;
+}
+
+.lightbox-prev{
+  left:25px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.lightbox-next{
+  right:25px;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.lightbox-caption{
+  position:absolute;
+  bottom:25px;
+  left:0;
+  right:0;
+  text-align:center;
+  color:white;
+  font-weight:bold;
+}
+
+/* ABOUT */
+
+.dark{
+  background:var(--d);
+  color:white;
+}
+
+.dark p{
+  color:#d5e0df;
+  font-size:1.1rem;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+
+.features{
+  display:grid;
+  gap:14px;
+}
+
+.feature{
+  padding:17px;
+  background:#ffffff12;
+  border-left:5px solid var(--o);
+  border-radius:14px;
+  transition:.25s;
+}
+
+.feature:hover{
+  transform:translateX(5px);
+  background:#ffffff1c;
+}
+
+/* SERVICES */
+
+.services{
+  background:#fff;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.service{
+  padding:28px;
+  background:var(--c);
+  border-radius:24px;
+  box-shadow:0 10px 35px #102a2a12;
+  transition:.3s;
+}
+
+.service:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 45px #102a2a20;
+}
+
+.service-icon{
+  font-size:40px;
+  margin-bottom:15px;
+}
+
+.service h3{
+  margin:0 0 10px;
+}
+
+.service p{
+  color:var(--m);
+  line-height:1.6;
+}
+
+/* CONTACT */
+
+.contact{
+  background:linear-gradient(120deg,#ffe1c6,#d6f1eb);
+}
+
+.card{
+  background:white;
+  border-radius:30px;
+  padding:42px;
+  max-width:900px;
+  box-shadow:0 20px 60px #102a2a1f;
+}
+
+.card a{
+  color:var(--d);
+  font-weight:bold;
+}
+
+.social{
+  display:inline-block;
+  margin-top:8px;
+}
+
+/* BOOKING FORM */
+
+.booking-form{
+  display:grid;
+  gap:15px;
+  margin-top:25px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+  width:100%;
+  padding:14px 16px;
+  border:2px solid #ddd;
+  border-radius:12px;
+  font:inherit;
+  background:white;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+  outline:none;
+  border-color:var(--g);
+}
+
+.booking-form textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.booking-form button{
+  border:0;
+  cursor:pointer;
+  font:inherit;
+}
+
+/* FOOTER */
+
+footer{
+  padding:30px 7%;
+  color:var(--m);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* ANIMATIONS */
+
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .7s,transform .7s;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  .hero,
+  .grid2{
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-card{
+    height:420px;
+  }
+}
+
+@media(max-width:600px){
+
+  nav{
+    padding:15px 5%;
+  }
+
+  nav .links{
+    display:none;
+  }
+
+  section{
+    padding:70px 5%;
+  }
+
+  .hero{
+    padding:120px 5% 60px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-card{
+    height:350px;
+  }
+
+  .card{
+    padding:28px 22px;
+  }
+
+  .lightbox-prev{
+    left:10px;
+  }
+
+  .lightbox-next{
+    right:10px;
+  }
+
+  .lightbox img{
+    max-width:95vw;
+  }
+}
 </style>
+
 </head>
+
 <body>
-<nav><div class="logo"><span>Orange</span> Lens Frame</div><div class="links"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></div></nav>
-<header class="hero"><div><div class="badge">Photography • New Mexico</div><h1>Moments.<br><span>Captured.</span></h1><p>A colorful photography portfolio featuring portraits, nature, sports, aviation, and memorable moments.</p><a class="btn primary" href="#work">View My Work</a><a class="btn secondary" href="#contact">Book a Session</a></div><div class="hero-card"><div>📷</div><div>Orange Lens Frame</div></div></header>
 
-<section id="work"><h2 class="title">Selected Work</h2><p class="intro">A collection of sports, wildlife, aviation, portraits, and outdoor photography.</p>
-<div class="gallery">
-<article class="photo"><img src="images/Basketball.JPG" alt="Basketball at AHS in Alamogordo"><div class="caption"><strong>Basketball</strong><small>AHS · Alamogordo, New Mexico</small></div></article>
-<article class="photo"><img src="images/Bird.jpg" alt="Bird in Pagosa Springs"><div class="caption"><strong>Wildlife</strong><small>Pagosa Springs, Colorado</small></div></article>
-<article class="photo"><img src="images/F-16.jpg" alt="F-16 at Holloman Airshow 2026"><div class="caption"><strong>F-16 Falcon</strong><small>Holloman Airshow 2026</small></div></article>
-<article class="photo"><img src="images/Group.JPG" alt="Group portrait at Oliver Lee Memorial State Park"><div class="caption"><strong>Group Portrait</strong><small>Oliver Lee Memorial State Park</small></div></article>
-<article class="photo"><img src="images/Person%201.JPG" alt="Portrait at Oliver Lee Memorial State Park"><div class="caption"><strong>Portrait</strong><small>Oliver Lee Memorial State Park</small></div></article>
-<article class="photo"><img src="images/Person%202.JPG" alt="Portrait at Oliver Lee Memorial State Park"><div class="caption"><strong>Portrait</strong><small>Oliver Lee Memorial State Park</small></div></article>
-</div></section>
+<!-- NAVIGATION -->
 
-<section class="dark" id="about"><div class="grid2"><div><h2 class="title">Behind the Lens</h2><p>I'm a photographer who enjoys capturing a little bit of everything. From people and action to landscapes, wildlife, and aviation, I focus on making photographs that feel natural, energetic, and memorable.</p></div><div class="features"><div class="feature">📸 Portrait & People Photography</div><div class="feature">🌄 Nature & Wildlife Photography</div><div class="feature">🏀 Sports & Action Photography</div><div class="feature">✈️ Aviation Photography</div></div></div></section>
+<nav>
+  <div class="logo"><span>Orange</span> Lens Frame</div>
 
-<section class="contact" id="contact"><div class="card"><h2 class="title">Let's Create Something.</h2><p class="intro">Interested in booking a photo session? Get in touch.</p><p><b>Email:</b> <a href="mailto:jodycerra@outlook.com">jodycerra@outlook.com</a></p><p><b>Phone:</b> <a href="tel:+15755518646">(575) 551-8646</a></p><p><b>Instagram:</b> <a href="https://www.instagram.com/orange_lens_frame">@orange_lens_frame</a></p><a class="btn primary" href="mailto:jodycerra@outlook.com?subject=Photography%20Booking%20Request">Contact Me</a></div></section>
-<footer><span>© 2026 Orange Lens Frame Photography</span><span>Professional • Colorful • Authentic</span></footer>
-</body></html>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <div class="reveal">
+
+```
+<div class="badge">Photography • New Mexico</div>
+
+<h1>
+  Moments.<br>
+  <span>Captured.</span>
+</h1>
+
+<p>
+  A colorful photography portfolio featuring portraits,
+  nature, sports, aviation, wildlife, and memorable moments.
+</p>
+
+<a class="btn primary" href="#work">View My Work</a>
+
+<a class="btn secondary" href="#contact">Book a Session</a>
+```
+
+  </div>
+
+  <div class="hero-card reveal">
+
+```
+<img src="images/F-16.jpg" alt="F-16 Falcon at Holloman Airshow 2026">
+
+<div class="hero-label">
+  Orange Lens Frame
+</div>
+```
+
+  </div>
+
+</header>
+
+<!-- GALLERY -->
+
+<section id="work">
+
+  <h2 class="title reveal">Selected Work</h2>
+
+  <p class="intro reveal">
+    A collection of sports, wildlife, aviation, portraits,
+    and outdoor photography.
+  </p>
+
+  <div class="filters reveal">
+
+```
+<button class="filter-btn active" data-filter="all">
+  All
+</button>
+
+<button class="filter-btn" data-filter="sports">
+  Sports
+</button>
+
+<button class="filter-btn" data-filter="aviation">
+  Aviation
+</button>
+
+<button class="filter-btn" data-filter="wildlife">
+  Wildlife
+</button>
+
+<button class="filter-btn" data-filter="portraits">
+  Portraits
+</button>
+```
+
+  </div>
+
+  <div class="gallery">
+
+```
+<article class="photo reveal" data-category="sports"
+  data-title="Basketball"
+  data-location="AHS · Alamogordo, New Mexico">
+
+  <img src="images/Basketball.JPG"
+       alt="Basketball at AHS in Alamogordo">
+
+  <div class="caption">
+    <strong>Basketball</strong>
+    <small>AHS · Alamogordo, New Mexico</small>
+  </div>
+
+</article>
+
+
+<article class="photo reveal" data-category="wildlife"
+  data-title="Wildlife"
+  data-location="Pagosa Springs, Colorado">
+
+  <img src="images/Bird.jpg"
+       alt="Bird in Pagosa Springs">
+
+  <div class="caption">
+    <strong>Wildlife</strong>
+    <small>Pagosa Springs, Colorado</small>
+  </div>
+
+</article>
+
+
+<article class="photo f16 reveal" data-category="aviation"
+  data-title="F-16 Falcon"
+  data-location="Holloman Airshow 2026">
+
+  <img src="images/F-16.jpg"
+       alt="F-16 at Holloman Airshow 2026">
+
+  <div class="caption">
+    <strong>F-16 Falcon</strong>
+    <small>Holloman Airshow 2026</small>
+  </div>
+
+</article>
+
+
+<article class="photo reveal" data-category="portraits"
+  data-title="Group Portrait"
+  data-location="Oliver Lee Memorial State Park">
+
+  <img src="images/Group.JPG"
+       alt="Group portrait at Oliver Lee Memorial State Park">
+
+  <div class="caption">
+    <strong>Group Portrait</strong>
+    <small>Oliver Lee Memorial State Park</small>
+  </div>
+
+</article>
+
+
+<article class="photo reveal" data-category="portraits"
+  data-title="Portrait"
+  data-location="Oliver Lee Memorial State Park">
+
+  <img src="images/Person%201.JPG"
+       alt="Portrait at Oliver Lee Memorial State Park">
+
+  <div class="caption">
+    <strong>Portrait</strong>
+    <small>Oliver Lee Memorial State Park</small>
+  </div>
+
+</article>
+
+
+<article class="photo reveal" data-category="portraits"
+  data-title="Portrait"
+  data-location="Oliver Lee Memorial State Park">
+
+  <img src="images/Person%202.JPG"
+       alt="Portrait at Oliver Lee Memorial State Park">
+
+  <div class="caption">
+    <strong>Portrait</strong>
+    <small>Oliver Lee Memorial State Park</small>
+  </div>
+
+</article>
+```
+
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <h2 class="title reveal">
+    Photography Services
+  </h2>
+
+  <p class="intro reveal">
+    Whether you're looking for portraits, action shots,
+    or something completely different, let's create
+    something worth remembering.
+  </p>
+
+  <div class="service-grid">
+
+```
+<div class="service reveal">
+
+  <div class="service-icon">📸</div>
+
+  <h3>Portraits</h3>
+
+  <p>
+    Individual and group portraits designed to capture
+    natural and memorable moments.
+  </p>
+
+</div>
+
+
+<div class="service reveal">
+
+  <div class="service-icon">🏀</div>
+
+  <h3>Sports</h3>
+
+  <p>
+    Action photography for sports, teams,
+    competitions, and special events.
+  </p>
+
+</div>
+
+
+<div class="service reveal">
+
+  <div class="service-icon">✈️</div>
+
+  <h3>Aviation</h3>
+
+  <p>
+    Aviation and airshow photography focused
+    on aircraft, action, and atmosphere.
+  </p>
+
+</div>
+
+
+<div class="service reveal">
+
+  <div class="service-icon">🌄</div>
+
+  <h3>Nature & Wildlife</h3>
+
+  <p>
+    Outdoor photography featuring landscapes,
+    wildlife, and the world around us.
+  </p>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="dark" id="about">
+
+  <div class="grid2">
+
+```
+<div class="reveal">
+
+  <h2 class="title">
+    Behind the Lens
+  </h2>
+
+  <p>
+    I'm a photographer who enjoys capturing a little bit
+    of everything. From people and action to landscapes,
+    wildlife, and aviation, I focus on making photographs
+    that feel natural, energetic, and memorable.
+  </p>
+
+</div>
+
+
+<div class="features reveal">
+
+  <div class="feature">
+    📸 Portrait & People Photography
+  </div>
+
+  <div class="feature">
+    🌄 Nature & Wildlife Photography
+  </div>
+
+  <div class="feature">
+    🏀 Sports & Action Photography
+  </div>
+
+  <div class="feature">
+    ✈️ Aviation Photography
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- CONTACT / BOOKING -->
+
+<section class="contact" id="contact">
+
+  <div class="card reveal">
+
+```
+<h2 class="title">
+  Let's Create Something.
+</h2>
+
+<p class="intro">
+  Interested in booking a photo session?
+  Send me a request and I'll get back to you.
+</p>
+
+
+<p>
+  <b>Email:</b>
+  <a href="mailto:jodycerra@outlook.com">
+    jodycerra@outlook.com
+  </a>
+</p>
+
+
+<p>
+  <b>Phone:</b>
+  <a href="tel:+15755518646">
+    (575) 551-8646
+  </a>
+</p>
+
+
+<p>
+  <b>Instagram:</b>
+  <a
+    class="social"
+    href="https://www.instagram.com/orange_lens_frame"
+    target="_blank"
+    rel="noopener">
+    @orange_lens_frame
+  </a>
+</p>
+
+
+<h3>Request a Session</h3>
+
+
+<form
+  class="booking-form"
+  action="mailto:jodycerra@outlook.com"
+  method="post"
+  enctype="text/plain">
+
+  <input
+    type="text"
+    name="Name"
+    placeholder="Your name"
+    required>
+
+  <input
+    type="email"
+    name="Email"
+    placeholder="Your email"
+    required>
+
+  <select name="Photography Type" required>
+
+    <option value="">
+      What type of photography?
+    </option>
+
+    <option>Portraits</option>
+    <option>Sports</option>
+    <option>Aviation</option>
+    <option>Wildlife</option>
+    <option>Event Photography</option>
+    <option>Other</option>
+
+  </select>
+
+
+  <input
+    type="date"
+    name="Preferred Date">
+
+
+  <textarea
+    name="Message"
+    placeholder="Tell me about what you're looking for..."></textarea>
+
+
+  <button
+    class="btn primary"
+    type="submit">
+    Send Booking Request
+  </button>
+
+</form>
+
+
+<a
+  class="btn secondary"
+  href="https://www.instagram.com/orange_lens_frame"
+  target="_blank"
+  rel="noopener">
+  📷 Follow Me on Instagram
+</a>
+```
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <span>
+    © 2026 Orange Lens Frame Photography
+  </span>
+
+  <span>
+    Professional • Colorful • Authentic
+  </span>
+
+</footer>
+
+<!-- FULL SCREEN PHOTO VIEWER -->
+
+<div class="lightbox" id="lightbox">
+
+  <button class="lightbox-close" aria-label="Close">
+    ×
+  </button>
+
+  <button class="lightbox-prev" aria-label="Previous">
+    ‹
+  </button>
+
+  <img id="lightbox-img" src="" alt="">
+
+  <button class="lightbox-next" aria-label="Next">
+    ›
+  </button>
+
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+
+</div>
+
+<script>
+
+/* ------------------------------
+   PHOTO FILTERS
+------------------------------ */
+
+const filterButtons =
+  document.querySelectorAll(".filter-btn");
+
+const photos =
+  document.querySelectorAll(".photo");
+
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    filterButtons.forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    const filter =
+      button.dataset.filter;
+
+    photos.forEach(photo => {
+
+      if(
+        filter === "all" ||
+        photo.dataset.category === filter
+      ){
+
+        photo.style.display = "";
+
+      }else{
+
+        photo.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* ------------------------------
+   LIGHTBOX
+------------------------------ */
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImg =
+  document.getElementById("lightbox-img");
+
+const lightboxCaption =
+  document.getElementById("lightbox-caption");
+
+const closeButton =
+  document.querySelector(".lightbox-close");
+
+const prevButton =
+  document.querySelector(".lightbox-prev");
+
+const nextButton =
+  document.querySelector(".lightbox-next");
+
+
+let currentPhoto = 0;
+
+
+function visiblePhotos(){
+
+  return [...photos].filter(photo =>
+    photo.style.display !== "none"
+  );
+
+}
+
+
+function openPhoto(photo){
+
+  const visible =
+    visiblePhotos();
+
+  currentPhoto =
+    visible.indexOf(photo);
+
+  showPhoto();
+
+  lightbox.classList.add("show");
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+function showPhoto(){
+
+  const visible =
+    visiblePhotos();
+
+  if(!visible.length) return;
+
+  if(currentPhoto < 0)
+    currentPhoto = visible.length - 1;
+
+  if(currentPhoto >= visible.length)
+    currentPhoto = 0;
+
+  const photo =
+    visible[currentPhoto];
+
+  const img =
+    photo.querySelector("img");
+
+  lightboxImg.src =
+    img.src;
+
+  lightboxImg.alt =
+    img.alt;
+
+  lightboxCaption.textContent =
+    photo.dataset.title +
+    " • " +
+    photo.dataset.location;
+
+}
+
+
+function closeLightbox(){
+
+  lightbox.classList.remove("show");
+
+  document.body.style.overflow = "";
+
+}
+
+
+photos.forEach(photo => {
+
+  photo.addEventListener("click", () => {
+
+    openPhoto(photo);
+
+  });
+
+});
+
+
+closeButton.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+prevButton.addEventListener("click", () => {
+
+  currentPhoto--;
+
+  showPhoto();
+
+});
+
+
+nextButton.addEventListener("click", () => {
+
+  currentPhoto++;
+
+  showPhoto();
+
+});
+
+
+lightbox.addEventListener("click", event => {
+
+  if(event.target === lightbox){
+
+    closeLightbox();
+
+  }
+
+});
+
+
+document.addEventListener("keydown", event => {
+
+  if(!lightbox.classList.contains("show"))
+    return;
+
+  if(event.key === "Escape")
+    closeLightbox();
+
+  if(event.key === "ArrowLeft"){
+
+    currentPhoto--;
+    showPhoto();
+
+  }
+
+  if(event.key === "ArrowRight"){
+
+    currentPhoto++;
+    showPhoto();
+
+  }
+
+});
+
+
+/* ------------------------------
+   SCROLL ANIMATIONS
+------------------------------ */
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("visible");
+
+        }
+
+      });
+
+    },
+    {
+      threshold:.12
+    }
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+</script>
+
+</body>
+</html>
