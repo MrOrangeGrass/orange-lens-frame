@@ -256,11 +256,11 @@ section{
 
 /* F-16 orientation */
 .photo.f16 img{
-  transform:rotate(180deg) scale(1.02);
+  transform:rotate(0deg) scale(1.02);
 }
 
 .photo.f16:hover img{
-  transform:rotate(180deg) scale(1.08);
+  transform:rotate(0deg) scale(1.08);
 }
 
 .photo:after{
@@ -329,13 +329,14 @@ section{
   border:none;
   background:rgba(255,255,255,.15);
   color:white;
-  width:52px;
-  height:52px;
+  width:54px;
+  height:54px;
   border-radius:50%;
-  font-size:32px;
-  line-height:1;
   cursor:pointer;
   transition:.2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .lightbox-close:hover,
@@ -345,22 +346,71 @@ section{
   transform:scale(1.08);
 }
 
+/* CLOSE X */
+
 .lightbox-close{
   top:20px;
   right:25px;
+  font-size:0;
 }
+
+.lightbox-close::before,
+.lightbox-close::after{
+  content:"";
+  position:absolute;
+  width:24px;
+  height:3px;
+  background:white;
+  border-radius:5px;
+}
+
+.lightbox-close::before{
+  transform:rotate(45deg);
+}
+
+.lightbox-close::after{
+  transform:rotate(-45deg);
+}
+
+/* LEFT ARROW */
 
 .lightbox-prev{
   left:25px;
   top:50%;
   transform:translateY(-50%);
+  font-size:0;
 }
+
+.lightbox-prev::before{
+  content:"";
+  width:16px;
+  height:16px;
+  border-left:3px solid white;
+  border-bottom:3px solid white;
+  transform:rotate(45deg);
+  margin-left:7px;
+}
+
+/* RIGHT ARROW */
 
 .lightbox-next{
   right:25px;
   top:50%;
   transform:translateY(-50%);
+  font-size:0;
 }
+
+.lightbox-next::before{
+  content:"";
+  width:16px;
+  height:16px;
+  border-right:3px solid white;
+  border-top:3px solid white;
+  transform:rotate(45deg);
+  margin-right:7px;
+}
+
+/* CAPTION */
 
 .lightbox-caption{
   position:absolute;
@@ -373,7 +423,6 @@ section{
   font-weight:bold;
   text-shadow:0 2px 8px black;
 }
-
 /* =========================
    ABOUT
 ========================= */
