@@ -46,10 +46,13 @@ nav{
   padding:18px 7%;
 
   background:#fffaf3e8;
+
   backdrop-filter:blur(10px);
 
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 
   font-weight:800;
@@ -57,8 +60,11 @@ nav{
 
 nav a{
   color:var(--d);
+
   text-decoration:none;
+
   margin-left:22px;
+
   transition:.25s;
 }
 
@@ -89,6 +95,7 @@ nav a:hover{
   align-items:center;
 
   background:
+
     radial-gradient(
       circle at 85% 20%,
       #ffd9b8 0 12%,
@@ -103,6 +110,7 @@ nav a:hover{
 }
 
 .badge{
+
   display:inline-block;
 
   background:var(--g);
@@ -117,7 +125,9 @@ nav a:hover{
 }
 
 h1{
-  font-size:clamp(3.5rem,8vw,7rem);
+
+  font-size:
+    clamp(3.5rem,8vw,7rem);
 
   line-height:.9;
 
@@ -131,6 +141,7 @@ h1 span{
 }
 
 .hero p{
+
   font-size:1.2rem;
 
   color:var(--m);
@@ -146,6 +157,7 @@ h1 span{
 ========================= */
 
 .btn{
+
   display:inline-block;
 
   padding:14px 22px;
@@ -166,12 +178,14 @@ h1 span{
 }
 
 .primary{
+
   background:var(--o);
 
   color:#fff;
 }
 
 .secondary{
+
   border:2px solid var(--d);
 
   color:var(--d);
@@ -180,6 +194,7 @@ h1 span{
 }
 
 .secondary:hover{
+
   background:var(--d);
 
   color:white;
@@ -242,7 +257,9 @@ section{
 }
 
 .title{
-  font-size:clamp(2.3rem,5vw,4rem);
+
+  font-size:
+    clamp(2.3rem,5vw,4rem);
 
   line-height:1;
 
@@ -250,11 +267,14 @@ section{
 }
 
 .intro{
+
   color:var(--m);
 
   max-width:700px;
 
   margin-bottom:40px;
+
+  line-height:1.6;
 }
 
 
@@ -358,6 +378,25 @@ section{
 
 
 /* =========================
+   F-16 ROTATION
+========================= */
+
+.photo.f16 img{
+
+  transform:
+    rotate(180deg)
+    scale(1.02);
+}
+
+.photo.f16:hover img{
+
+  transform:
+    rotate(180deg)
+    scale(1.08);
+}
+
+
+/* =========================
    ABOUT
 ========================= */
 
@@ -408,7 +447,7 @@ section{
 
 
 /* =========================
-   CONTACT
+   BOOKING SECTION
 ========================= */
 
 .contact{
@@ -431,35 +470,117 @@ section{
 
   max-width:850px;
 
+  margin:0 auto;
+
   box-shadow:
     0 20px 60px #102a2a1f;
 }
 
-.card a{
+
+/* =========================
+   FORM
+========================= */
+
+.booking-form{
+
+  display:grid;
+
+  gap:10px;
+}
+
+.booking-form label{
+
+  font-weight:bold;
+
+  margin-top:12px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+
+  width:100%;
+
+  padding:14px 16px;
+
+  border:
+    2px solid #d9e1df;
+
+  border-radius:12px;
+
+  font-family:Arial,sans-serif;
+
+  font-size:16px;
 
   color:var(--d);
 
-  font-weight:bold;
+  background:white;
+
+  outline:none;
+
+  transition:.2s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+
+  border-color:var(--g);
+
+  box-shadow:
+    0 0 0 3px #2a9d8f22;
+}
+
+.booking-form textarea{
+
+  resize:vertical;
+
+  min-height:140px;
+}
+
+.booking-form button{
+
+  border:none;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  margin-top:18px;
 }
 
 
 /* =========================
-   FOOTER
+   CONTACT INFO
 ========================= */
 
-footer{
+.contact-info{
 
-  padding:30px 7%;
+  margin-top:35px;
 
-  color:var(--m);
+  padding-top:25px;
 
-  display:flex;
+  border-top:
+    1px solid #102a2a20;
+}
 
-  justify-content:space-between;
+.contact-info p{
 
-  flex-wrap:wrap;
+  margin:12px 0;
+}
 
-  gap:10px;
+.contact-info a{
+
+  color:var(--d);
+
+  font-weight:bold;
+
+  text-decoration:none;
+}
+
+.contact-info a:hover{
+
+  color:var(--o);
 }
 
 
@@ -509,6 +630,9 @@ footer{
     0 20px 80px rgba(0,0,0,.8);
 
   user-select:none;
+
+  transition:
+    transform .25s;
 }
 
 
@@ -551,13 +675,14 @@ footer{
 .lightbox-prev:hover,
 .lightbox-next:hover{
 
-  background:rgba(255,255,255,.3);
+  background:
+    rgba(255,255,255,.3);
 
   transform:scale(1.08);
 }
 
 
-/* CLOSE X */
+/* CLOSE */
 
 .lightbox-close{
 
@@ -595,7 +720,7 @@ footer{
 }
 
 
-/* LEFT ARROW */
+/* LEFT */
 
 .lightbox-prev{
 
@@ -603,7 +728,8 @@ footer{
 
   top:50%;
 
-  transform:translateY(-50%);
+  transform:
+    translateY(-50%);
 
   font-size:0;
 }
@@ -616,9 +742,11 @@ footer{
 
   height:16px;
 
-  border-left:3px solid white;
+  border-left:
+    3px solid white;
 
-  border-bottom:3px solid white;
+  border-bottom:
+    3px solid white;
 
   transform:rotate(45deg);
 
@@ -626,7 +754,7 @@ footer{
 }
 
 
-/* RIGHT ARROW */
+/* RIGHT */
 
 .lightbox-next{
 
@@ -634,7 +762,8 @@ footer{
 
   top:50%;
 
-  transform:translateY(-50%);
+  transform:
+    translateY(-50%);
 
   font-size:0;
 }
@@ -647,9 +776,11 @@ footer{
 
   height:16px;
 
-  border-right:3px solid white;
+  border-right:
+    3px solid white;
 
-  border-top:3px solid white;
+  border-top:
+    3px solid white;
 
   transform:rotate(45deg);
 
@@ -657,7 +788,7 @@ footer{
 }
 
 
-/* LIGHTBOX CAPTION */
+/* CAPTION */
 
 .lightbox-caption{
 
@@ -683,7 +814,27 @@ footer{
 
 
 /* =========================
-   MOBILE
+   FOOTER
+========================= */
+
+footer{
+
+  padding:30px 7%;
+
+  color:var(--m);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+}
+
+
+/* =========================
+   TABLET
 ========================= */
 
 @media(max-width:800px){
@@ -718,8 +869,13 @@ footer{
 
     font-size:.85rem;
   }
+
 }
 
+
+/* =========================
+   PHONE
+========================= */
 
 @media(max-width:520px){
 
@@ -750,7 +906,8 @@ footer{
 
   .hero{
 
-    padding:130px 5% 60px;
+    padding:
+      130px 5% 60px;
   }
 
   .hero-card{
@@ -758,11 +915,17 @@ footer{
     height:300px;
   }
 
+  .card{
+
+    padding:25px;
+
+    border-radius:22px;
+  }
+
   .lightbox{
 
     padding:
-      60px
-      10px;
+      60px 10px;
   }
 
   .lightbox-image{
@@ -786,21 +949,24 @@ footer{
 
 
 /* =========================
-   F-16 ROTATION
+   SUCCESS MESSAGE
 ========================= */
 
-.photo.f16 img{
+.form-success{
 
-  transform:
-    rotate(180deg)
-    scale(1.02);
-}
+  display:none;
 
-.photo.f16:hover img{
+  padding:18px;
 
-  transform:
-    rotate(180deg)
-    scale(1.08);
+  margin-top:20px;
+
+  background:#d6f1eb;
+
+  color:var(--d);
+
+  border-radius:14px;
+
+  font-weight:bold;
 }
 
 </style>
@@ -825,7 +991,7 @@ footer{
 
   <div class="links">
 
-    <a href="index.html#work">
+    <a href="#work">
       Work
     </a>
 
@@ -833,11 +999,11 @@ footer{
       Gallery
     </a>
 
-    <a href="index.html#about">
+    <a href="#about">
       About
     </a>
 
-    <a href="index.html#contact">
+    <a href="#contact">
       Contact
     </a>
 
@@ -861,15 +1027,20 @@ footer{
 
 
     <h1>
+
       Moments.<br>
+
       <span>Captured.</span>
+
     </h1>
 
 
     <p>
+
       A colorful photography portfolio featuring
       portraits, nature, sports, aviation,
       and memorable moments.
+
     </p>
 
 
@@ -919,7 +1090,7 @@ footer{
 
 
 <!-- =========================
-     FEATURED WORK
+     SELECTED WORK
 ========================= -->
 
 <section id="work">
@@ -930,8 +1101,10 @@ footer{
 
 
   <p class="intro">
+
     A collection of sports, wildlife, aviation,
     portraits, and outdoor photography.
+
   </p>
 
 
@@ -1102,7 +1275,11 @@ footer{
   </div>
 
 
-  <div style="text-align:center;margin-top:35px;">
+  <div
+    style="
+      text-align:center;
+      margin-top:35px;
+    ">
 
     <a
       class="btn primary"
@@ -1138,12 +1315,13 @@ footer{
 
 
       <p>
+
         I'm a photographer who enjoys capturing
         a little bit of everything. From people
         and action to landscapes, wildlife,
-        and aviation, I focus on making
-        photographs that feel natural,
-        energetic, and memorable.
+        and aviation, I focus on making photographs
+        that feel natural, energetic, and memorable.
+
       </p>
 
     </div>
@@ -1181,7 +1359,7 @@ footer{
 
 
 <!-- =========================
-     CONTACT
+     BOOKING / CONTACT
 ========================= -->
 
 <section
@@ -1193,65 +1371,198 @@ footer{
 
 
     <h2 class="title">
-      Let's Create Something.
+      Book a Session.
     </h2>
 
 
     <p class="intro">
-      Interested in booking a photo session?
-      Get in touch.
-    </p>
 
-
-    <p>
-
-      <b>Email:</b>
-
-      <a
-        href="mailto:jodycerra@outlook.com">
-
-        jodycerra@outlook.com
-
-      </a>
+      Interested in booking a photography session?
+      Fill out the form below and I'll get back
+      to you.
 
     </p>
 
 
-    <p>
 
-      <b>Phone:</b>
+    <!-- FORM -->
 
-      <a
-        href="tel:+15755518646">
-
-        (575) 551-8646
-
-      </a>
-
-    </p>
+    <form
+      class="booking-form"
+      action="https://formspree.io/f/mykrqowj"
+      method="POST">
 
 
-    <p>
+      <label for="name">
+        Name *
+      </label>
 
-      <b>Instagram:</b>
-
-      <a
-        href="https://www.instagram.com/orange_lens_frame">
-
-        @orange_lens_frame
-
-      </a>
-
-    </p>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        required>
 
 
-    <a
-      class="btn primary"
-      href="mailto:jodycerra@outlook.com?subject=Photography%20Booking%20Request">
 
-      Contact Me
+      <label for="email">
+        Email *
+      </label>
 
-    </a>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        required>
+
+
+
+      <label for="phone">
+        Phone
+      </label>
+
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="(575) 555-5555">
+
+
+
+      <label for="type">
+        Photography Type *
+      </label>
+
+      <select
+        id="type"
+        name="photography_type"
+        required>
+
+        <option value="">
+          Select a type
+        </option>
+
+        <option value="Portrait">
+          Portrait
+        </option>
+
+        <option value="Sports">
+          Sports
+        </option>
+
+        <option value="Aviation">
+          Aviation
+        </option>
+
+        <option value="Wildlife">
+          Wildlife
+        </option>
+
+        <option value="Nature">
+          Nature
+        </option>
+
+        <option value="Event">
+          Event
+        </option>
+
+        <option value="Other">
+          Other
+        </option>
+
+      </select>
+
+
+
+      <label for="date">
+        Preferred Date
+      </label>
+
+      <input
+        type="date"
+        id="date"
+        name="preferred_date">
+
+
+
+      <label for="message">
+        Tell me about your session *
+      </label>
+
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="Tell me what you're looking for..."
+        required></textarea>
+
+
+
+      <button
+        class="btn primary"
+        type="submit">
+
+        Send Booking Request
+
+      </button>
+
+
+    </form>
+
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <div class="contact-info">
+
+
+      <p>
+
+        <b>Email:</b>
+
+        <a
+          href="mailto:jodycerra@outlook.com">
+
+          jodycerra@outlook.com
+
+        </a>
+
+      </p>
+
+
+      <p>
+
+        <b>Phone:</b>
+
+        <a
+          href="tel:+15755518646">
+
+          (575) 551-8646
+
+        </a>
+
+      </p>
+
+
+      <p>
+
+        <b>Instagram:</b>
+
+        <a
+          href="https://www.instagram.com/orange_lens_frame"
+          target="_blank">
+
+          @orange_lens_frame
+
+        </a>
+
+      </p>
+
+
+    </div>
+
 
   </div>
 
@@ -1269,6 +1580,7 @@ footer{
     © 2026 Orange Lens Frame Photography
   </span>
 
+
   <span>
     Professional • Colorful • Authentic
   </span>
@@ -1278,7 +1590,7 @@ footer{
 
 
 <!-- =========================
-     FULLSCREEN VIEWER
+     FULLSCREEN PHOTO VIEWER
 ========================= -->
 
 <div
@@ -1405,9 +1717,12 @@ function showPhoto(index){
     photo.dataset.location;
 
 
+
   /* F-16 rotation */
 
-  if(photo.classList.contains("f16")){
+  if(
+    photo.classList.contains("f16")
+  ){
 
     lightboxImage.style.transform =
       "rotate(180deg)";
@@ -1552,7 +1867,7 @@ closeButton.addEventListener(
 
 
 /* =========================
-   CLICK BACKGROUND TO CLOSE
+   CLICK BACKGROUND
 ========================= */
 
 lightbox.addEventListener(
@@ -1573,7 +1888,7 @@ lightbox.addEventListener(
 
 
 /* =========================
-   KEYBOARD CONTROLS
+   KEYBOARD
 ========================= */
 
 document.addEventListener(
