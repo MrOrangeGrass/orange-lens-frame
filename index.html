@@ -37,45 +37,41 @@ body{
 ========================= */
 
 nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:50;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
 
-  padding:18px 7%;
+    padding:18px 7%;
 
-  background:#fffaf3e8;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-  backdrop-filter:blur(10px);
+    background:#12372A;
+    backdrop-filter:blur(10px);
 
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  font-weight:800;
+    font-weight:800;
 }
 
-nav a{
-  color:var(--d);
-
-  text-decoration:none;
-
-  margin-left:22px;
-
-  transition:.25s;
-}
-
-nav a:hover{
-  color:var(--o);
+.logo{
+    color:white;
 }
 
 .logo span{
-  color:var(--o);
+    color:#FF6B35;
 }
 
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:22px;
+}
+
+nav a:hover{
+    color:#FFB347;
+}
 
 /* =========================
    HERO
